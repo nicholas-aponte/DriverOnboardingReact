@@ -4,7 +4,13 @@ import com.limosys.driver.onboarding.model.Driver;
 
 public class DriverApplicationDTO {
 	private Driver driver;
-
+//	private DriverAddress driverAddress;
+//	
+//	pubic DriverAdress getDriverAddress() {
+//		return driverAddress;
+//		
+//	}
+	
 	public Driver getDriver() {
 		return driver;
 	}
