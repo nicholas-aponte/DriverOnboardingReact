@@ -1,4 +1,4 @@
-import { grayColor } from "assets/jss/billing-app.js";
+import { grayColor } from "../../../assets/jss/billing-app.js";
 
 const cardFooterStyle = {
   cardFooter: {

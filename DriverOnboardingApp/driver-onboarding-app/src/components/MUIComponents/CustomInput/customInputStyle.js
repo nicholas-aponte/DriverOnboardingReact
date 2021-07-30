@@ -5,7 +5,7 @@ import {
   defaultFont,
   whiteColor,
   grayColor
-} from "assets/jss/billing-app.js";
+} from "../../../assets/jss/billing-app.js";
 
 const customInputStyle = {
   disabled: {

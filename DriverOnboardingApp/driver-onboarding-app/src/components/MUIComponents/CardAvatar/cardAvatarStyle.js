@@ -1,7 +1,7 @@
 import {
   blackColor,
   hexToRgb
-} from "assets/jss/billing-app.js";
+} from "../../../assets/jss/billing-app.js";
 
 const cardAvatarStyle = {
   cardAvatar: {

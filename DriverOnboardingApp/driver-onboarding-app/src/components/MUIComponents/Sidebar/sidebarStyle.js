@@ -15,7 +15,7 @@ import {
   blackColor,
   grayColor,
   hexToRgb
-} from "assets/jss/billing-app.js";
+} from "../../../assets/jss/billing-app.js";
 
 const sidebarStyle = theme => ({
   drawerPaperRTL: {

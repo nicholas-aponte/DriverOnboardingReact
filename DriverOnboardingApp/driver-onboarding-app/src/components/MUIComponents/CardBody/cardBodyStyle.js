@@ -1,7 +1,7 @@
 import {
   whiteColor,
   hexToRgb
-} from "assets/jss/billing-app.js";
+} from "../../../assets/jss/billing-app.js";
 
 const cardBodyStyle = {
   cardBody: {

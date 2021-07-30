@@ -1,14 +1,14 @@
 
 import './App.css';
-import BasicDriverInfoForm from "./components/BasicDriverInfoForm"
-import DriverLocationDocs  from './components/DriverLocationDocsForm';
+import DriverApplication  from './Pages/DriverApplication/DriverApplication';
 import React from "react";
-// import { AppStateProvider } from './data/store/appStore';
 import { Router, Route, Switch, Link, Redirect } from 'react-router-dom';
-// import AppLayout from './layouts/AppLayout/AppLayout';
-// import Auth from './layouts/AuthLayout/Auth';
+
 
 import { createBrowserHistory } from "history";
+import MaterialLayout from './components/Layout/MaterialLayout';
+import CheckoutPage from './components/CheckoutPage';
+
 
 const hist = createBrowserHistory({
   basename: process.env.PUBLIC_URL
@@ -20,14 +20,16 @@ const hist = createBrowserHistory({
 
 
     <Router history={hist}>
-      <Switch>
-        <Route path="/basic-driver-info" component= {BasicDriverInfoForm} />
-        <Route path="/documents" component={DriverLocationDocs} />
+      <MaterialLayout>
+        <CheckoutPage></CheckoutPage>
+      {/* <Switch>
+        <Route path="/basic-driver-info" component=  {DriverApplication} />
         <Redirect from="/" to="/basic-driver-info" />
-      </Switch>
+      </Switch> */}
+      </MaterialLayout>
     </Router>
-    {/* <BasicDriverInfoForm></BasicDriverInfoForm>
-    <DriverLocationDocs></DriverLocationDocs> */}
+    
+    
     </>
   );
 

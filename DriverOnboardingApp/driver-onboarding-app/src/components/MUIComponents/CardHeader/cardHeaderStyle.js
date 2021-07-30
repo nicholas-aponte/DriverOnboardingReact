@@ -8,7 +8,7 @@ import {
   whiteColor,
   blackColor,
   hexToRgb
-} from "assets/jss/billing-app.js";
+} from "../../../assets/jss/billing-app.js";
 const cardHeaderStyle = {
   cardHeader: {
     padding: "0.75rem 1.25rem",

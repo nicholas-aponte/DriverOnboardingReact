@@ -19,8 +19,8 @@ import {
   dribbbleColor,
   redditColor,
   hexToRgb
-} from "assets/jss/billing-app.js";
-
+} from "../../../assets/jss/billing-app";
+// ../assets/jss/billing-app.js
 const buttonStyle = {
   button: {
     minHeight: "auto",
