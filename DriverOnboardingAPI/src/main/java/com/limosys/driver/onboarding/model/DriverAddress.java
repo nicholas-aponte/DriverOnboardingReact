@@ -67,11 +67,11 @@ public class DriverAddress implements Serializable {
 		this.geoAddrType = geoAddrType;
 	}
 
-	public String getCountryID() {
+	public Integer getCountryID() {
 		return countryID;
 	}
 
-	public void setCountryID(String countryID) {
+	public void setCountryID(Integer countryID) {
 		this.countryID = countryID;
 	}
 

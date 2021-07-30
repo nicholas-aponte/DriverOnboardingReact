@@ -16,8 +16,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-// imports for Serialization if needed
-//import java.io.Serializable;
+
 //import java.util.Collection;
 //import java.util.List;
 //
@@ -58,13 +57,58 @@ public class Driver implements Serializable {
 	public void setDriverAddresses(Set<DriverAddress> driverAddresses ) {
 		this. driverAddresses = driverAddresses ;
 		
-        //To set initialize driver object in DriverAddress class to "this" instance (to relate them together)
+        //To  initialize driver object in DriverAddress class to "this" instance (to relate them together)
         this.driverAddresses.forEach(x -> x.setDriver(this) );
 	}
 	public Set< DriverAddress > getDriverAddresses(){
 		return this.driverAddresses ;
 	}
 	//**************************************
+	
+	// ------------------------------------------------ driverPhone
+	
+	
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "driver", cascade = CascadeType.ALL)
+	private Set<DriverPhone> driverPhones; 
+	
+	public void setDriverPhones(Set<DriverPhone> driverPhones) {
+		this.driverPhones = driverPhones;
+		
+		this.driverPhones.forEach(e -> e.setDriver(this));
+	}
+	public Set < DriverPhone > getDriverPhones(){
+		return this.driverPhones ;
+	}
+	
+	// --------------------------------------------------
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "driver", cascade = CascadeType.ALL)
+	private Set<DriverCommMech> driverCommMechs; 
+	
+	public void setDriverCommMechs(Set<DriverCommMech> driverCommMechs) {
+		this.driverCommMechs = driverCommMechs;
+		
+		this.driverCommMechs.forEach(i -> i.setDriver(this));
+	}
+	public Set < DriverCommMech > getDriverCommMechs(){
+		return this.driverCommMechs ;
+	}
+	
+	// --------------------------------------------------
+	
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "driver", cascade = CascadeType.ALL)
+	private Set<DriverDoc> driverDocs; 
+	
+	public void setDriverDocs(Set<DriverDoc> driverDocs) {
+		this.driverDocs = driverDocs;
+		
+		this.driverDocs.forEach(i -> i.setDriver(this));
+	}
+	public Set < DriverDoc > getDriverDocs(){
+		return this.driverDocs ;
+	} 
 	
 // getters/setters 
 	public String getFirstName() {

@@ -22,7 +22,19 @@ public class DriverOnboardingController {
 	@RequestMapping(value = "/application", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public  void submitDriverApplication(@RequestBody DriverApplicationDTO driverApplicationDTO, HttpServletRequest request) throws Exception {
 		
-		driverOnboardingService.submitDriverApplication(driverApplicationDTO);
+		// check if the DRVR_ID already exists, 
+			//if it does, Merge changes
+			// if not 
+			driverOnboardingService.submitDriverApplication(driverApplicationDTO);
+		
+		
+		
+		
+		
+		
+//		context.MyEntities.AddOrUpdate(e => e.Id, entity);
+//		MediaType.APPLICATION_JSON_VALUE.contains(null)
+		
 		
 	}//public void  submitDriverApplication
 	
