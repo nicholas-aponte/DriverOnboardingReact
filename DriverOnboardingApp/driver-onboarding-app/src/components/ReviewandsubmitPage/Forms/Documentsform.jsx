@@ -72,8 +72,8 @@ export default function Documentsform(props) {
       <Typography variant="h6" gutterBottom>
         Driver documents
       </Typography>
-      <Grid container spacing={1}>
-      <Grid item xs={12} md={1}>
+      <Grid container spacing={6}>
+      <Grid item xs={12} md={3}>
         <SelectField
             name={documentIssuedCountry.name}
             label={documentIssuedCountry.label}
@@ -81,7 +81,7 @@ export default function Documentsform(props) {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} md={6}>
         <SelectField
             name={documentIssuedState.name}
             label={documentIssuedState.label}
@@ -89,7 +89,7 @@ export default function Documentsform(props) {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} md={6}>
         <SelectField
             name={documentType.name}
             label={documentType.label}
@@ -99,32 +99,32 @@ export default function Documentsform(props) {
         </Grid>
         
         
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} md={6}>
           <InputField
             name={documentNumber.name}
             label={documentNumber.label}
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} md={6}>
           <DatePickerField
             name={expiryDate.name}
             label={expiryDate.label}
-            format="MM/yy"
-            views={['year', 'month']}
+            format="MM/dd/yy"
+            views={['year', 'month', 'day']}
             minDate={new Date()}
             maxDate={new Date('2050/12/31')}
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} md={6}>
           <InputField
             name={documentFrontImage.name}
             label={documentFrontImage.label}
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} md={6}>
           <InputField
             name={documentBackImage.name}
             label={documentBackImage.label}

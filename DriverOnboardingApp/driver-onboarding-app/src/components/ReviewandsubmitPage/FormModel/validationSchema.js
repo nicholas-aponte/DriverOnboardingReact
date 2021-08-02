@@ -6,6 +6,7 @@ const {
     firstName,
     lastName,
     address1,
+    address2,
     city,
     zipcode,
     country,
@@ -23,24 +24,10 @@ const stepOneSchema = Yup.object().shape({
   [lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
   [phoneNumber.name]: Yup.string().required(`${phoneNumber.requiredErrorMsg}`),
   [email.name]: Yup.string().required(`${phoneNumber.requiredErrorMsg}`),
-  [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
-  [state.name]: Yup.string().required(`${state.requiredErrorMsg}`),
-  [city.name]: Yup.string()
-    .nullable(),
-    // .required(`${city.requiredErrorMsg}`),
-  [zipcode.name]: Yup.string()
-    .required(`${zipcode.requiredErrorMsg}`)
-    .test(
-      'len',
-      `${zipcode.invalidErrorMsg}`,
-      val => val && val.length === 5
-    ),
-  [country.name]: Yup.string()
-    .nullable()
-    .required(`${country.requiredErrorMsg}`)
+  
 })
 
-const stepTwoSchema = Yup.object().shape({
+const stepThreeSchema = Yup.object().shape({
 
   [firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
   [lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
@@ -64,6 +51,28 @@ const stepTwoSchema = Yup.object().shape({
   
 })
 
-const schemaArr = [stepOneSchema, stepTwoSchema];
+const stepTwoSchema = Yup.object().shape({
+
+ 
+  [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
+  [address2.name]: Yup.string(),
+  [state.name]: Yup.string().required(`${state.requiredErrorMsg}`),
+  [city.name]: Yup.string()
+    .nullable(),
+    // .required(`${city.requiredErrorMsg}`),
+  [zipcode.name]: Yup.string()
+    .required(`${zipcode.requiredErrorMsg}`)
+    .test(
+      'len',
+      `${zipcode.invalidErrorMsg}`,
+      val => val && val.length === 5
+    ),
+  [country.name]: Yup.string()
+    .nullable()
+    .required(`${country.requiredErrorMsg}`)
+  
+})
+
+const schemaArr = [stepOneSchema, stepTwoSchema, stepThreeSchema];
 
 export default schemaArr;

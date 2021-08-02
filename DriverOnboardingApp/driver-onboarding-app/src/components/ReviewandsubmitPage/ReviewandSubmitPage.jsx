@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { Formik, Form } from 'formik';
 
+import BasicInformationForm from './Forms/BasicInformationform'
 import AddressForm from './Forms/AddressForm';
 import DocumentsForm from './Forms/Documentsform';
 import ReviewApplication from './ReviewOrder/ReviewApplication';
@@ -19,18 +20,21 @@ import reviewFormModel from './FormModel/applicationFormModel';
 import formInitialValues from './FormModel/formInitialValues';
 
 import useStyles from './styles';
+import Documentsform from './Forms/Documentsform';
 
-const steps = ['Driver Information', 'Driver documents', 'Review/Submit'];
+const steps = ['Basic Information','Address', 'Driver documents', 'Review/Submit'];
 const { formId, formField } = reviewFormModel;
 
 function _renderStepContent(step) {
   switch (step) {
     case 0:
-      return <AddressForm formField={formField} />;
+      return <BasicInformationForm formField={formField} />;
     case 1:
-      return <DocumentsForm formField={formField} />;
+      return <AddressForm formField={formField} />;
     case 2:
-      return <ReviewApplication />;
+      return <Documentsform formField = {formField} />;
+    case 3: 
+    return <ReviewApplication />;
     default:
       return <div>Not Found</div>;
   }

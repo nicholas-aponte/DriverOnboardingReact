@@ -77,7 +77,7 @@ export default function AddressForm(props) {
         Driver Information
       </Typography>
       <Grid container spacing={6}>
-        {/* <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6}>
           <InputField name={firstName.name} label={firstName.label} fullWidth />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -88,8 +88,8 @@ export default function AddressForm(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <InputField name={email.name} label={email.label} fullWidth />
-        </Grid> */}
-        <Grid item xs={12}>
+        </Grid>
+        {/* <Grid item xs={12}>
           <InputField name={address1.name} label={address1.label} fullWidth />
         </Grid>
         <Grid item xs={12}>
@@ -121,7 +121,7 @@ export default function AddressForm(props) {
             data={countries}
             fullWidth
           />
-        </Grid>
+        </Grid> */}
         
        
       </Grid>
