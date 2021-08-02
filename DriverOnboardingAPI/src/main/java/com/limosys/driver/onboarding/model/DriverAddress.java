@@ -1,8 +1,11 @@
 package com.limosys.driver.onboarding.model;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,19 +15,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "DRVR_ADDR", schema = "DBO")
 public class DriverAddress implements Serializable {
-		
-	
+			
 	@Id
-	@Column(name = "GEO_ADDR_TYPE")
-	private String geoAddrType;
+	@Column(name = "ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	
+	@Column(name = "GEO_ADDR_TYPE_CD")
+	private String geoAddrTypeCd;
+	
+		
 	@Column(name = "COUNTRY_ID")
 	private Integer countryID;
 	
 	@Column(name = "STATE_CD")
 	private String stateCode;
 	
-	@Column(name = "POSTAL_CD")
+	@Column(name = "POSTAL_CD_TXT")
 	private String postalCode;
 	
 	@Column(name = "CITY_NME")
@@ -49,7 +56,9 @@ public class DriverAddress implements Serializable {
 	@Column(name = "AREA_CD")
 	private String areaCd;
 	
-		
+	
+	
+
 	//***************// Creates relationship via foreign key Driver_ID to DRVR 
 	@ManyToOne
     @JoinColumn(name="DRVR_ID")
@@ -59,12 +68,22 @@ public class DriverAddress implements Serializable {
 	}
 	//*********************************
 		
-	public String getGeoAddrType() {
-		return geoAddrType;
+	public String getGeoAddrTypeCd() {
+		return geoAddrTypeCd;
+	}
+	
+	
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setGeoAddrType(String geoAddrType) {
-		this.geoAddrType = geoAddrType;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setGeoAddrTypeCd(String geoAddrTypeCd) {
+		this.geoAddrTypeCd = geoAddrTypeCd;
 	}
 
 	public Integer getCountryID() {
@@ -146,9 +165,6 @@ public class DriverAddress implements Serializable {
 	public void setAreaCd(String areaCd) {
 		this.areaCd = areaCd;
 	}
-	
-	
-	
 	
 	
 	

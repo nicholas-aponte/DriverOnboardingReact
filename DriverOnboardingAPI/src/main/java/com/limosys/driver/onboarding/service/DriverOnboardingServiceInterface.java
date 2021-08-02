@@ -4,6 +4,6 @@ import com.limosys.driver.onboarding.dto.DriverApplicationDTO;
 
 
 public interface DriverOnboardingServiceInterface {
-	public void submitDriverApplication(DriverApplicationDTO driverAppDTO);
+	public void submitDriverApplication(DriverApplicationDTO driverAppDTO) throws Exception;
 
 }
