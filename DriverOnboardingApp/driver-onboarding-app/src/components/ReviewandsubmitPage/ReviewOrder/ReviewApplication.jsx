@@ -7,6 +7,8 @@ import DocumentDetails from './DocumentDetails';
 
 export default function ReviewApplication() {
   const { values: formValues } = useFormikContext();
+
+  console.log( formValues)
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>

@@ -6,7 +6,9 @@ import useStyles from './styles';
 function DocumentDetails(props) {
   const { formValues } = props;
   const classes = useStyles();
-  const { nameOnCard, cardNumber, expiryDate } = formValues;
+  const {  expiryDate, documentType } = formValues;
+
+  console.log("document type = " + documentType)
   return (
     <Grid item container direction="column" xs={12} sm={6}>
       <Typography variant="h6" gutterBottom className={classes.title}>
@@ -18,7 +20,9 @@ function DocumentDetails(props) {
             <Typography gutterBottom>Document Type</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography gutterBottom>test</Typography>
+            <Typography gutterBottom>
+              {documentType}
+              </Typography>
           </Grid>
         </React.Fragment>
         <React.Fragment>

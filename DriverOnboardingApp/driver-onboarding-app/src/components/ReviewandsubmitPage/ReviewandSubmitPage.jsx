@@ -12,10 +12,10 @@ import { Formik, Form } from 'formik';
 import AddressForm from './Forms/AddressForm';
 import DocumentsForm from './Forms/Documentsform';
 import ReviewApplication from './ReviewOrder/ReviewApplication';
-import CheckoutSuccess from './CheckoutSuccess/CheckoutSuccess';
+import CheckoutSuccess from './ApplicationSuccess/ApplicationSuccess';
 
 import validationSchema from './FormModel/validationSchema';
-import reviewFormModel from './FormModel/reviewFormModel';
+import reviewFormModel from './FormModel/applicationFormModel';
 import formInitialValues from './FormModel/formInitialValues';
 
 import useStyles from './styles';

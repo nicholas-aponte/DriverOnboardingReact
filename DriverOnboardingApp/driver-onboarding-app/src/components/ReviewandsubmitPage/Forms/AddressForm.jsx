@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
-import { InputField, CheckboxField, SelectField } from '../../FormFields';
+import { InputField,  SelectField } from '../../FormFields';
 
 const cities = [
   {
@@ -27,15 +27,15 @@ const states = [
     label: 'None'
   },
   {
-    value: '11',
+    value: '1',
     label: 'New york'
   },
   {
-    value: '22',
+    value: '2',
     label: 'New Jersey'
   },
   {
-    value: '33',
+    value: '3',
     label: 'Other'
   }
 ];
@@ -46,11 +46,11 @@ const countries = [
     label: 'None'
   },
   {
-    value: '111',
+    value: '1',
     label: 'United States'
   },
   {
-    value: '222',
+    value: '2',
     label: 'Other'
   },
   
@@ -67,20 +67,27 @@ export default function AddressForm(props) {
       state,
       zipcode,
       country,
-      useAddressForPaymentDetails
+      phoneNumber,
+      email
     }
   } = props;
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Driver Address
+        Driver Information
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={1}>
           <InputField name={firstName.name} label={firstName.label} fullWidth />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={1}>
           <InputField name={lastName.name} label={lastName.label} fullWidth />
+        </Grid>
+        <Grid item xs={12} sm={1}>
+          <InputField name={phoneNumber.name} label={phoneNumber.label} fullWidth />
+        </Grid>
+        <Grid item xs={12} sm={1}>
+          <InputField name={email.name} label={email.label} fullWidth />
         </Grid>
         <Grid item xs={12}>
           <InputField name={address1.name} label={address1.label} fullWidth />
@@ -88,7 +95,7 @@ export default function AddressForm(props) {
         <Grid item xs={12}>
           <InputField name={address2.name} label={address2.label} fullWidth />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={1}>
           <SelectField
             name={city.name}
             label={city.label}
@@ -96,7 +103,7 @@ export default function AddressForm(props) {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={1}>
           <SelectField
             name={state.name}
             label={state.label}
@@ -104,10 +111,10 @@ export default function AddressForm(props) {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={1}>
           <InputField name={zipcode.name} label={zipcode.label} fullWidth />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={1}>
           <SelectField
             name={country.name}
             label={country.label}
@@ -115,12 +122,8 @@ export default function AddressForm(props) {
             fullWidth
           />
         </Grid>
-        {/* <Grid item xs={12}>
-          <CheckboxField
-            name={useAddressForPaymentDetails.name}
-            label={useAddressForPaymentDetails.label}
-          />
-        </Grid> */}
+        
+       
       </Grid>
     </React.Fragment>
   );

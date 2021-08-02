@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import moment from 'moment';
-import reviewFormModel from './reviewFormModel';
+import reviewFormModel from './applicationFormModel';
 const {
   formField: {
     firstName,
@@ -9,6 +9,9 @@ const {
     city,
     zipcode,
     country,
+    phoneNumber,
+    email,
+    state
     
   }
 } = reviewFormModel;
@@ -18,7 +21,10 @@ const {
 const stepOneSchema = Yup.object().shape({
   [firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
   [lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
+  [phoneNumber.name]: Yup.string().required(`${phoneNumber.requiredErrorMsg}`),
+  [email.name]: Yup.string().required(`${phoneNumber.requiredErrorMsg}`),
   [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
+  [state.name]: Yup.string().required(`${state.requiredErrorMsg}`),
   [city.name]: Yup.string()
     .nullable(),
     // .required(`${city.requiredErrorMsg}`),
