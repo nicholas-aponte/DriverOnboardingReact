@@ -13,11 +13,11 @@ const cities = [
   },
   {
     value: '2',
-    label: 'Chicago'
+    label: 'Trenton'
   },
   {
     value: '3',
-    label: 'Saigon'
+    label: 'Other '
   }
 ];
 
@@ -28,15 +28,15 @@ const states = [
   },
   {
     value: '11',
-    label: 'Florida'
+    label: 'New york'
   },
   {
     value: '22',
-    label: 'Michigan'
+    label: 'New Jersey'
   },
   {
     value: '33',
-    label: 'Texas'
+    label: 'Other'
   }
 ];
 
@@ -51,12 +51,9 @@ const countries = [
   },
   {
     value: '222',
-    label: 'Italy'
+    label: 'Other'
   },
-  {
-    value: '333',
-    label: 'Vietnam'
-  }
+  
 ];
 
 export default function AddressForm(props) {
@@ -76,7 +73,7 @@ export default function AddressForm(props) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Shipping address
+        Driver Address
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
@@ -118,12 +115,12 @@ export default function AddressForm(props) {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <CheckboxField
             name={useAddressForPaymentDetails.name}
             label={useAddressForPaymentDetails.label}
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </React.Fragment>
   );

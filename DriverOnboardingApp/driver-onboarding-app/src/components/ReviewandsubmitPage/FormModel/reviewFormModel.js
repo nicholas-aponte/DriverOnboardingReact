@@ -1,5 +1,5 @@
-export default {
-    formId: 'checkoutForm',
+const reviewForm =  {
+    formId: 'applicationForm',
     formField: {
       firstName: {
         name: 'firstName',
@@ -22,7 +22,7 @@ export default {
       },
       city: {
         name: 'city',
-        label: 'City*',
+        label: 'City',
         requiredErrorMsg: 'City is required'
       },
       state: {
@@ -40,18 +40,15 @@ export default {
         label: 'Country*',
         requiredErrorMsg: 'Country is required'
       },
-      useAddressForPaymentDetails: {
-        name: 'useAddressForPaymentDetails',
-        label: 'Use this address for payment details'
-      },
-      nameOnCard: {
-        name: 'nameOnCard',
-        label: 'Name on card*',
+      
+      documentType: {
+        name: 'documentType*',
+        label: 'Doc Type',
         requiredErrorMsg: 'Name on card is required'
       },
-      cardNumber: {
-        name: 'cardNumber',
-        label: 'Card number*',
+      documentNumber: {
+        name: 'documentNumber',
+        label: 'Document Number*',
         requiredErrorMsg: 'Card number is required',
         invalidErrorMsg: 'Card number is not valid (e.g. 4111111111111)'
       },
@@ -61,6 +58,18 @@ export default {
         requiredErrorMsg: 'Expiry date is required',
         invalidErrorMsg: 'Expiry date is not valid'
       },
+      documentFrontImage: {
+        name: 'documentFrontImage',
+        label: 'front document image*',
+        requiredErrorMsg: 'CVV is required',
+        invalidErrorMsg: 'CVV is invalid (e.g. 357)'
+      },
+      documentBackImage: {
+        name: 'documentBackImage',
+        label: 'back document image*',
+        requiredErrorMsg: 'CVV is required',
+        invalidErrorMsg: 'CVV is invalid (e.g. 357)'
+      },
       cvv: {
         name: 'cvv',
         label: 'CVV*',
@@ -69,4 +78,4 @@ export default {
       }
     }
   };
-  
+  export default reviewForm;

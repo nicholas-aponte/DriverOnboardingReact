@@ -9,19 +9,19 @@ import {
 } from '@material-ui/core';
 import { Formik, Form } from 'formik';
 
-import AddressForm from '../Forms/AddressForm';
-import PaymentForm from '../Forms/PaymentForm';
-import ReviewOrder from '../ReviewOrder';
-import CheckoutSuccess from '../CheckoutSuccess/CheckoutSuccess';
+import AddressForm from './Forms/AddressForm';
+import PaymentForm from './Forms/Documentsform';
+import ReviewOrder from './ReviewOrder';
+import CheckoutSuccess from './CheckoutSuccess/CheckoutSuccess';
 
-import validationSchema from '../FormModel/validationSchema';
-import checkoutFormModel from '../FormModel/checkoutFormModel';
-import formInitialValues from '../FormModel/formInitialValues';
+import validationSchema from './FormModel/validationSchema';
+import reviewformModel from './FormModel/reviewFormModel';
+import formInitialValues from './FormModel/formInitialValues';
 
-import useStyles from './styles';
+import useStyles from './ReviewOrder/styles';
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
-const { formId, formField } = checkoutFormModel;
+const steps = ['Driver Address', 'Driver documents', 'Review/Submit'];
+const { formId, formField } = reviewformModel;
 
 function _renderStepContent(step) {
   switch (step) {
@@ -71,7 +71,7 @@ export default function CheckoutPage() {
   return (
     <React.Fragment>
       <Typography component="h1" variant="h4" align="center">
-        Checkout
+        Review Application
       </Typography>
       <Stepper activeStep={activeStep} className={classes.stepper}>
         {steps.map(label => (
@@ -107,7 +107,7 @@ export default function CheckoutPage() {
                       color="primary"
                       className={classes.button}
                     >
-                      {isLastStep ? 'Place order' : 'Next'}
+                      {isLastStep ? 'Submit Application' : 'Next'}
                     </Button>
                     {isSubmitting && (
                       <CircularProgress

@@ -7,7 +7,7 @@ import { Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 
 import { createBrowserHistory } from "history";
 import MaterialLayout from './components/Layout/MaterialLayout';
-import CheckoutPage from './components/CheckoutPage';
+import ReviewandSubmitPage from './components/ReviewandsubmitPage/ReviewandSubmitPage';
 
 
 const hist = createBrowserHistory({
@@ -21,7 +21,7 @@ const hist = createBrowserHistory({
 
     <Router history={hist}>
       <MaterialLayout>
-        <CheckoutPage></CheckoutPage>
+        <ReviewandSubmitPage></ReviewandSubmitPage>
       {/* <Switch>
         <Route path="/basic-driver-info" component=  {DriverApplication} />
         <Redirect from="/" to="/basic-driver-info" />

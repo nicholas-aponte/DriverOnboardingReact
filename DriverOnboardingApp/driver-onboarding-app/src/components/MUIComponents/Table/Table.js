@@ -76,22 +76,7 @@ export default function CustomTable(props) {
             if (prop.total) {
               return (
                 <TableRow key={key} hover={hover} className={tableRowClasses}>
-                  <TableCell
-                    className={classes.tableCell}
-                    colSpan={prop.colspan}
-                  />
-                  <TableCell
-                    className={classes.tableCell + " " + classes.tableCellTotal}
-                  >
-                    Total
-                  </TableCell>
-                  <TableCell
-                    className={
-                      classes.tableCell + " " + classes.tableCellAmount
-                    }
-                  >
-                    {prop.amount}
-                  </TableCell>
+                  
                   {tableHead.length - (prop.colspan - 0 + 2) > 0 ? (
                     <TableCell
                       className={classes.tableCell}

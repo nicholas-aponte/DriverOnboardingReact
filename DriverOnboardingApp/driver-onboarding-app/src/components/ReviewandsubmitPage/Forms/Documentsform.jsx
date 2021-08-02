@@ -2,28 +2,28 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { InputField, DatePickerField } from '../../FormFields';
 
-export default function PaymentForm(props) {
+export default function Documentsform(props) {
   const {
-    formField: { nameOnCard, cardNumber, expiryDate, cvv }
+    formField: { documentBackImage,documentFrontImage, documentType,documentNumber, expiryDate, cvv }
   } = props;
 
   return (
-    <React.Fragment>
+    <>
       <Typography variant="h6" gutterBottom>
-        Payment method
+        Driver documents
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <InputField
-            name={nameOnCard.name}
-            label={nameOnCard.label}
+            name={documentType.name}
+            label={documentType.label}
             fullWidth
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <InputField
-            name={cardNumber.name}
-            label={cardNumber.label}
+            name={documentNumber.name}
+            label={documentNumber.label}
             fullWidth
           />
         </Grid>
@@ -39,9 +39,20 @@ export default function PaymentForm(props) {
           />
         </Grid>
         <Grid item xs={12} md={6}>
-          <InputField name={cvv.name} label={cvv.label} fullWidth />
+          <InputField
+            name={documentFrontImage.name}
+            label={documentFrontImage.label}
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <InputField
+            name={documentBackImage.name}
+            label={documentBackImage.label}
+            fullWidth
+          />
         </Grid>
       </Grid>
-    </React.Fragment>
+    </>
   );
 }

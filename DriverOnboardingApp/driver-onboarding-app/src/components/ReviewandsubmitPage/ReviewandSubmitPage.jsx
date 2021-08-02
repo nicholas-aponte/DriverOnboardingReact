@@ -10,27 +10,27 @@ import {
 import { Formik, Form } from 'formik';
 
 import AddressForm from './Forms/AddressForm';
-import PaymentForm from './Forms/PaymentForm';
-import ReviewOrder from './ReviewOrder';
+import DocumentsForm from './Forms/Documentsform';
+import ReviewApplication from './ReviewOrder/ReviewApplication';
 import CheckoutSuccess from './CheckoutSuccess/CheckoutSuccess';
 
 import validationSchema from './FormModel/validationSchema';
-import checkoutFormModel from './FormModel/checkoutFormModel';
+import reviewFormModel from './FormModel/reviewFormModel';
 import formInitialValues from './FormModel/formInitialValues';
 
 import useStyles from './styles';
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
-const { formId, formField } = checkoutFormModel;
+const steps = ['Driver Information', 'Driver documents', 'Review/Submit'];
+const { formId, formField } = reviewFormModel;
 
 function _renderStepContent(step) {
   switch (step) {
     case 0:
       return <AddressForm formField={formField} />;
     case 1:
-      return <PaymentForm formField={formField} />;
+      return <DocumentsForm formField={formField} />;
     case 2:
-      return <ReviewOrder />;
+      return <ReviewApplication />;
     default:
       return <div>Not Found</div>;
   }
@@ -69,9 +69,9 @@ export default function CheckoutPage() {
   }
 
   return (
-    <React.Fragment>
+    <>
       <Typography component="h1" variant="h4" align="center">
-        Checkout
+        Driver Onboarding
       </Typography>
       <Stepper activeStep={activeStep} className={classes.stepper}>
         {steps.map(label => (
@@ -80,7 +80,7 @@ export default function CheckoutPage() {
           </Step>
         ))}
       </Stepper>
-      <React.Fragment>
+      <>
         {activeStep === steps.length ? (
           <CheckoutSuccess />
         ) : (
@@ -107,7 +107,7 @@ export default function CheckoutPage() {
                       color="primary"
                       className={classes.button}
                     >
-                      {isLastStep ? 'Place order' : 'Next'}
+                      {isLastStep ? 'SUBMIT APPLICATION' : 'Next'}
                     </Button>
                     {isSubmitting && (
                       <CircularProgress
@@ -121,7 +121,7 @@ export default function CheckoutPage() {
             )}
           </Formik>
         )}
-      </React.Fragment>
-    </React.Fragment>
+      </>
+    </>
   );
 }
